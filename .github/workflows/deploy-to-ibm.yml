@@ -52,8 +52,8 @@ jobs:
         ---
         applications:
         - name: v2ws
-          memory: 128M
-          disk_quota: 128M
+          memory: 256M
+          disk_quota: 1024M
           random-route: true
           command: ./v2ray
           buildpacks:
@@ -62,7 +62,7 @@ jobs:
     
     - uses: citizen-of-planet-earth/cf-cli-action@v1
       with:
-        cf_api: https://api.us-south.cf.cloud.ibm.com
+        cf_api: https://api.eu-gb.cf.cloud.ibm.com
         cf_username: ${{ secrets.CF_USER_IBM }}
         cf_password: ${{ secrets.CF_PASSWORD_IBM }}
         cf_org: ${{ secrets.CF_ORG_IBM }}
