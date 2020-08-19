@@ -55,7 +55,7 @@ jobs:
           memory: 256M
           disk_quota: 1G
           routes:
-          - route: zeze.mybluemix.net
+          - route: zeze.eu-gb.mybluemix.net
           command: ./v2ray
           buildpacks:
           - binary_buildpack
