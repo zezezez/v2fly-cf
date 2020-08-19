@@ -1,6 +1,6 @@
 ---
 applications:
-- name: v2ws
+- name: zezeze
   memory: 128M
   disk_quota: 128M
   random-route: true
