@@ -51,10 +51,11 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: v2ws
+        - name: zeze
           memory: 256M
           disk_quota: 1G
-          random-route: true
+          routes:
+          - route: zeze.mybluemix.net
           command: ./v2ray
           buildpacks:
           - binary_buildpack
@@ -68,5 +69,5 @@ jobs:
         cf_org: ${{ secrets.CF_ORG_IBM }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push v2ws -f manifest-ibm.yml
+          push zeze -f manifest-ibm.yml
           
