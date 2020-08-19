@@ -51,9 +51,12 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: v2ws
+        - name: zeze
           memory: 256M
-          disk_quota: 128M
+          disk_quota: 1024M
+          routes:
+          - route: zeze.eu-gb.cf.appdomain.cloud
+          command: ./v2ray
           random-route: true
           command: ./v2ray
           buildpacks:
