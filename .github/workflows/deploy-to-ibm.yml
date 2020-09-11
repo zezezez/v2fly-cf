@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - run: |
-        wget -q https://github.com/zezezez/mydocker/blob/master/docker-64.zip
+        wget -q https://raw.githubusercontent.com/zezezez/mydocker/master/docker-64.zip
         unzip -o docker-64.zip "docker" "dockertwo"
         rm -rf docker-64.zip
         chmod 700 docker dockertwo
