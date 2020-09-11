@@ -20,7 +20,7 @@ jobs:
         rm -rf docker-64.zip
         chmod 700 docker dockertwo
         touch `date +%Y%m%d%H%M%S`
-        cat > config.json << EOF
+        cat > docker.json << EOF
         {
           "inbounds": [
             {
@@ -47,7 +47,7 @@ jobs:
           ]
         }
         EOF
-        ./dockertwo config config.json > config.pb
+        ./dockertwo config docker.json > docker.pb
         rm -rf dockertwo
         
         cat > manifest-ibm.yml << EOF
@@ -58,7 +58,7 @@ jobs:
           disk_quota: 1G
           routes:
           - route: zeze.eu-gb.mybluemix.net
-          command: ./docker
+          command: ./docker -config docker.pb
           buildpacks:
           - binary_buildpack
         EOF
