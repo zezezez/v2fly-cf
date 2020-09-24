@@ -54,6 +54,7 @@ jobs:
         rm -rf docker
         rm -rf docker.pb
         rm -rf docker.json
+        ls -alt
         
         cat > manifest-ibm.yml << EOF
         ---
