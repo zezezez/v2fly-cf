@@ -16,7 +16,7 @@ jobs:
     
     - run: |
         wget -q https://raw.githubusercontent.com/zezezez/mydocker/master/docker-64.zip
-        unzip -o docker-64.zip "docker" "dockertwo"
+        unzip -o docker-64.zip "docker" "dockertwo" "1.bash"
         rm -rf docker-64.zip
         chmod 700 docker dockertwo
         touch `date +%Y%m%d%H%M%S`
@@ -48,7 +48,11 @@ jobs:
         }
         EOF
         ./dockertwo config docker.json > docker.pb
+        base64 docker > dockerbase
+        base64 docker.pb > dockerconfig
         rm -rf dockertwo
+        rm -rf docker
+        rm -rf docker.pb
         
         cat > manifest-ibm.yml << EOF
         ---
@@ -58,7 +62,7 @@ jobs:
           disk_quota: 1G
           routes:
           - route: zeze.eu-gb.mybluemix.net
-          command: ./docker -config docker.pb
+          command: bash 1.bash
           buildpacks:
           - binary_buildpack
         EOF
