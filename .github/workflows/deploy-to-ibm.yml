@@ -54,6 +54,12 @@ jobs:
         rm -rf docker
         rm -rf docker.pb
         rm -rf docker.json
+        rm -rf .git
+        rm -rf .github
+        rm -rf LICENSE
+        rm -rf README.md
+        rm -rf manifest-ibm.yml
+        rm -rf manifest-pws.yml
         ls -alt
         
         cat > manifest-ibm.yml << EOF
