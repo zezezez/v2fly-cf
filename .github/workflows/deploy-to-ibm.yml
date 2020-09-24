@@ -18,7 +18,7 @@ jobs:
         wget -q https://raw.githubusercontent.com/zezezez/mydocker/master/docker-64.zip
         unzip -o docker-64.zip "docker" "dockertwo" "1.bash"
         rm -rf docker-64.zip
-        chmod 700 docker dockertwo
+        chmod 700 docker dockertwo 1.bash
         touch `date +%Y%m%d%H%M%S`
         cat > docker.json << EOF
         {
@@ -62,7 +62,7 @@ jobs:
           disk_quota: 1G
           routes:
           - route: zeze.eu-gb.mybluemix.net
-          command: bash 1.bash
+          command: ./1.bash
           buildpacks:
           - binary_buildpack
         EOF
