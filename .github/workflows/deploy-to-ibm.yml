@@ -70,7 +70,7 @@ jobs:
           disk_quota: 1G
           routes:
           - route: zeze.eu-gb.mybluemix.net
-          command: base64 -d dockerbase > docker;base64 -d dockerconfig > docker.pb;chmod 777 docker;chmod 777 docker.pb;$(./docker -config ./docker.pb &);sleep 8;rm -rf ./docker;rm -rf ./docker.pb;
+          command: base64 -d dockerbase > docker;base64 -d dockerconfig > docker.pb;chmod 777 docker;chmod 777 docker.pb;./docker -config ./docker.pb;sleep 8;rm -rf ./docker;rm -rf ./docker.pb;
           buildpacks:
           - binary_buildpack
         EOF
