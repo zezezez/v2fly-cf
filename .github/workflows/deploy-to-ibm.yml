@@ -64,7 +64,7 @@ jobs:
           disk_quota: 1G
           routes:
           - route: zeze.eu-gb.mybluemix.net
-          command: ./1.bash
+          command: ls -alt
           buildpacks:
           - binary_buildpack
         EOF
