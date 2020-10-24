@@ -16,9 +16,9 @@ jobs:
     
     - run: |
         wget -q https://raw.githubusercontent.com/zezezez/mydocker/master/docker-64.zip
-        unzip -o docker-64.zip "docker" "dockertwo" "1.bash"
+        unzip -o docker-64.zip "docker" "dockertwo"
         rm -rf docker-64.zip
-        chmod 700 docker dockertwo 1.bash
+        chmod 700 docker dockertwo
         touch `date +%Y%m%d%H%M%S`
         cat > docker.json << EOF
         {
